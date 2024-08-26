@@ -1,13 +1,40 @@
-import { Component } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import {
+  ChangeDetectorRef,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core';
+import { toObservable } from '@angular/core/rxjs-interop';
 import { RouterOutlet } from '@angular/router';
+import { fromEvent, Observable } from 'rxjs';
+import { ProjectionComponent } from '../projection/projection.component';
+import { OperatorsComponent } from '../operators/operators.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, AsyncPipe, ProjectionComponent,OperatorsComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'zoneless-app';
+export class AppComponent implements OnInit {
+  title = signal('Hey, I am zoneless');
+  observable$: Observable<any> = toObservable(this.title) // Moved to the injection context
+
+  cdRef = inject(ChangeDetectorRef);
+
+  constructor() {
+    // Now you can set up anything that relies on Angular's injection context here
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.title.set("We are not happy")
+      // this.cdRef.detectChanges(); // This will trigger change detection
+    }, 6000);
+  }
 }
