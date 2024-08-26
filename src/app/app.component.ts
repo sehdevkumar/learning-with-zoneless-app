@@ -12,11 +12,12 @@ import { RouterOutlet } from '@angular/router';
 import { fromEvent, Observable } from 'rxjs';
 import { ProjectionComponent } from '../projection/projection.component';
 import { OperatorsComponent } from '../operators/operators.component';
+import { FormsComponent } from '../forms/forms.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AsyncPipe, ProjectionComponent,OperatorsComponent],
+  imports: [RouterOutlet, AsyncPipe, ProjectionComponent,OperatorsComponent,FormsComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],

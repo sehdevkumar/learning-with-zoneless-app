@@ -1,0 +1,31 @@
+<h1>Template Driven Forms</h1>
+<form #myForm (ngSubmit)="onFormSubmit($event)">
+
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" ngModel />
+
+   <label for="mail">Email</label>
+  <input type="text" id="mail" name="mail" ngModel />
+
+
+  <button type="submit">Submit</button>
+
+</form>
+
+
+
+<h1>Reactive forms</h1>
+
+<form  [formGroup]="sampleReactiveForm"  (ngSubmit)="onFormSubmit($event)">
+
+  <label for="name">Name</label>
+  <input type="text" id="name" formControlName="name" />
+
+   <label for="mail">Email</label>
+  <input type="text" id="mail" formControlName="mail" />
+
+
+  <button type="submit">Submit</button>
+
+</form>
+
