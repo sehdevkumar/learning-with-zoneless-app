@@ -1,3 +1,4 @@
+import { DeferedBlocksComponent } from './../defered-blocks/defered-blocks.component';
 import { AsyncPipe } from '@angular/common';
 import {
   ChangeDetectorRef,
@@ -18,7 +19,7 @@ import { InjectionTokenComponent } from '../injection-token/injection-token.comp
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AsyncPipe, ProjectionComponent,OperatorsComponent,FormsComponent,InjectionTokenComponent],
+  imports: [RouterOutlet, AsyncPipe, ProjectionComponent,OperatorsComponent,FormsComponent,InjectionTokenComponent,DeferedBlocksComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
