@@ -16,11 +16,12 @@ import { OperatorsComponent } from '../operators/operators.component';
 import { FormsComponent } from '../forms/forms.component';
 import { InjectionTokenComponent } from '../injection-token/injection-token.component';
 import { ProviderInjectionComponent } from '../provider-injections/provider-injection/provider-injection.component';
+import { AnimationComponent } from '../animation/animation.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AsyncPipe, ProjectionComponent, OperatorsComponent, FormsComponent, InjectionTokenComponent, DeferedBlocksComponent, ProviderInjectionComponent],
+  imports: [RouterOutlet, AsyncPipe, ProjectionComponent, OperatorsComponent, FormsComponent, InjectionTokenComponent, DeferedBlocksComponent, ProviderInjectionComponent,AnimationComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],

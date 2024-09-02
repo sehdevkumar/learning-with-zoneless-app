@@ -1,0 +1,8 @@
+<p >
+  {{toggleValue()}}
+</p>
+
+<div [@openClose]="toggleValue()">This should be animated</div>
+
+
+<button (click)="onToggle()">On Toggle</button>
