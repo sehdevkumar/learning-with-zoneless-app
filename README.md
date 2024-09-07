@@ -9,5 +9,6 @@
 5. change detuction
 6. animation 
 7. injection Providers(useClass,useExisting etc....)
+8. Encapsulation
 
 ### `TODO: We will add more topics with example code`
