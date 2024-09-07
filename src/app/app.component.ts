@@ -15,11 +15,13 @@ import { ProjectionComponent } from '../projection/projection.component';
 import { OperatorsComponent } from '../operators/operators.component';
 import { FormsComponent } from '../forms/forms.component';
 import { InjectionTokenComponent } from '../injection-token/injection-token.component';
+import { HighlightDirective } from '../Directives/HightLightDirective';
+import { ShadowDomComponent } from '../shadow-dom/shadow-dom.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AsyncPipe, ProjectionComponent,OperatorsComponent,FormsComponent,InjectionTokenComponent,DeferedBlocksComponent],
+  imports: [RouterOutlet, AsyncPipe, ProjectionComponent,OperatorsComponent,FormsComponent,InjectionTokenComponent,DeferedBlocksComponent, HighlightDirective,ShadowDomComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
