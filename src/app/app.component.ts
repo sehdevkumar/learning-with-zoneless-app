@@ -18,11 +18,12 @@ import { InjectionTokenComponent } from '../injection-token/injection-token.comp
 import { HighlightDirective } from '../Directives/HightLightDirective';
 import { ShadowDomComponent } from '../shadow-dom/shadow-dom.component';
 import { HttpClient } from '@angular/common/http';
+import { UploadDownloadComponent } from '../upload-download-progress/upload-download-progress.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AsyncPipe, ProjectionComponent,OperatorsComponent,FormsComponent,InjectionTokenComponent,DeferedBlocksComponent, HighlightDirective,ShadowDomComponent],
+  imports: [RouterOutlet, AsyncPipe, ProjectionComponent,OperatorsComponent,FormsComponent,InjectionTokenComponent,DeferedBlocksComponent, HighlightDirective,ShadowDomComponent,UploadDownloadComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
@@ -40,7 +41,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.https.get('https://jsonplaceholder.typicode.com/todos').subscribe();
+    this.https.get("https://jsonplaceholder.typicode.com/todos").subscribe()
 
     setTimeout(() => {
       this.title.set("We are not happy")
