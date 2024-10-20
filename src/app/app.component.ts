@@ -17,6 +17,7 @@ import { FormsComponent } from '../forms/forms.component';
 import { InjectionTokenComponent } from '../injection-token/injection-token.component';
 import { HighlightDirective } from '../Directives/HightLightDirective';
 import { ShadowDomComponent } from '../shadow-dom/shadow-dom.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -31,12 +32,16 @@ export class AppComponent implements OnInit {
   observable$: Observable<any> = toObservable(this.title) // Moved to the injection context
 
   cdRef = inject(ChangeDetectorRef);
+  https  = inject(HttpClient)
 
   constructor() {
     // Now you can set up anything that relies on Angular's injection context here
   }
 
   ngOnInit(): void {
+
+    this.https.get('https://jsonplaceholder.typicode.com/todos').subscribe();
+
     setTimeout(() => {
       this.title.set("We are not happy")
       // this.cdRef.detectChanges(); // This will trigger change detection
